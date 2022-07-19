@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "348174097144",
+    "firebase_url": "https://chiringuitoapp-72ecf-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "chiringuitoapp-72ecf",
+    "storage_bucket": "chiringuitoapp-72ecf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:348174097144:android:a592ddfb4fea967246f90d",
+        "android_client_info": {
+          "package_name": "com.ingelmogarcia.chiringuitoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "348174097144-rkcp7qrli5itel2aub8s0c2u28oqs1vf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBF3hn8bL8MlFmz8j806tv9LPf4_5A5sYI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "348174097144-rkcp7qrli5itel2aub8s0c2u28oqs1vf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
