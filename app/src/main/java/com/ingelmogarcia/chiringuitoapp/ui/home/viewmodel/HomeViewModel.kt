@@ -1,15 +1,17 @@
 package com.ingelmogarcia.chiringuitoapp.ui.home.viewmodel
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.ingelmogarcia.chiringuitoapp.data.model.PedidoItemModel
 
 class HomeViewModel : ViewModel() {
 
-    private val _sumaTotal = MutableLiveData<Double>()
-    val sumaTotal:LiveData<Double> get() = _sumaTotal
+    val _sumaTotalLD = MutableLiveData<Double>()
 
-    fun aa(a:Double){
-        _sumaTotal.postValue(a)
+    val _botonVerPedidoLD = MutableLiveData<Boolean>()
+
+    companion object{
+        var sumaTotal: Double = 0.0
+        var listaPedido: MutableList<PedidoItemModel> = mutableListOf()
     }
 }

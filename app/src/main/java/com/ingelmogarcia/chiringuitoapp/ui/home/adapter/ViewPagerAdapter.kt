@@ -4,10 +4,10 @@ import android.content.res.Resources
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.ingelmogarcia.chiringuitoapp.ui.home.viewpagerOptions.FirstFragment
-import com.ingelmogarcia.chiringuitoapp.ui.home.viewpagerOptions.FourthFragment
-import com.ingelmogarcia.chiringuitoapp.ui.home.viewpagerOptions.SecondFragment
-import com.ingelmogarcia.chiringuitoapp.ui.home.viewpagerOptions.ThirdFragment
+import com.ingelmogarcia.chiringuitoapp.ui.home.view.fragment.viewpagerOptions.FirstFragment
+import com.ingelmogarcia.chiringuitoapp.ui.home.view.fragment.viewpagerOptions.FourthFragment
+import com.ingelmogarcia.chiringuitoapp.ui.home.view.fragment.viewpagerOptions.SecondFragment
+import com.ingelmogarcia.chiringuitoapp.ui.home.view.fragment.viewpagerOptions.ThirdFragment
 
 class ViewPagerAdapter(manager: FragmentActivity): FragmentStateAdapter(manager) {
 

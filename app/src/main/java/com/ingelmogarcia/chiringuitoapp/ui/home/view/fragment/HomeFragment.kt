@@ -5,27 +5,26 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.tabs.TabLayoutMediator
 import com.ingelmogarcia.chiringuitoapp.R
 import com.ingelmogarcia.chiringuitoapp.databinding.FragmentHomeBinding
 import com.ingelmogarcia.chiringuitoapp.ui.home.adapter.ViewPagerAdapter
+import com.ingelmogarcia.chiringuitoapp.ui.home.components.VerPedidoDialog
 import com.ingelmogarcia.chiringuitoapp.ui.home.viewmodel.HomeViewModel
-import com.ingelmogarcia.chiringuitoapp.ui.home.viewpagerOptions.FirstFragment
-import java.math.RoundingMode
 import java.text.DecimalFormat
+import android.app.FragmentManager;
 
 class HomeFragment : Fragment() {
 
+    private val TAG_DIALOG = "dialog"
+
     private lateinit var binding: FragmentHomeBinding
-    private val homeViewModel: HomeViewModel by viewModels()
+    private lateinit var homeViewModel: HomeViewModel
 
     var df = DecimalFormat("#.##")
-    //var ssssumaTotal: Double = 0.0
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,14 +35,10 @@ class HomeFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         setUpViewPager()
 
+
         binding.botonVerPedido.setOnClickListener {
-
+            VerPedidoDialog().show(activity!!.supportFragmentManager,TAG_DIALOG)
         }
-
-        homeViewModel.sumaTotal.observe(this, Observer {
-            binding.textviewTotal.text = "TOTAL: " + df.format(it) + "€"
-        })
-
 
         return binding.root
     }
@@ -63,6 +58,17 @@ class HomeFragment : Fragment() {
         }.attach()
     }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        homeViewModel = ViewModelProvider(activity!!).get(HomeViewModel::class.java)
 
+        homeViewModel._sumaTotalLD.observe(viewLifecycleOwner, Observer {
+            binding.textviewTotal.text = "TOTAL: " + df.format(it) + "€"
+        })
+
+        homeViewModel._botonVerPedidoLD.observe(viewLifecycleOwner, Observer {
+            binding.botonVerPedido.isEnabled = it
+        })
+    }
 
 }

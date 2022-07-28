@@ -41,7 +41,7 @@ class ProductoListAdapter(
                 .with(image.context)
                 .load(productoItemModel.urlImage)
                 .into(image)
-            this.title.text = productoItemModel.name
+            this.title.text = productoItemModel.name + " [" + productoItemModel.price +"€]"
         }
     }
 }

@@ -46,32 +46,37 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <Button
-            android:id="@+id/boton_ver_pedido"
+            android:id="@+id/botonVerPedido"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/textview_total"
+            app:layout_constraintEnd_toStartOf="@+id/textviewTotal"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:backgroundTint="@null"
-            android:background="@drawable/custom_button"
+            android:background="@drawable/state_button"
+            android:textColor="@color/white"
             android:text="VER PEDIDO"
-            android:textSize="23sp"/>
+            android:textSize="23sp"
+            app:layout_constraintHorizontal_weight="1"
+            android:enabled="false"/>
 
         <TextView
-            android:id="@+id/textview_total"
+            android:id="@+id/textviewTotal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/boton_ver_pedido"
+            app:layout_constraintStart_toEndOf="@+id/botonVerPedido"
             app:layout_constraintBottom_toBottomOf="parent"
             tools:text="TOTAL: 10.85€"
+            android:text="TOTAL: 0€"
             android:textStyle="bold"
             android:textSize="23sp"
-            android:background="@color/grease"
+            android:background="@color/black"
             android:textAlignment="center"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:textColor="@color/white"
+            app:layout_constraintHorizontal_weight="1" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
